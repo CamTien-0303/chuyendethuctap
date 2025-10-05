@@ -24,7 +24,7 @@ A Laravel-based e-commerce application for a flower shop with complete product m
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/nhandev04/php-flowershop.git
+git clone https://github.com/CamTien-0303/chuyendethuctap.git
 cd php-flowershop
 ```
 
