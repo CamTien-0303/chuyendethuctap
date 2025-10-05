@@ -56,7 +56,7 @@ RUN echo "APP_NAME=Laravel" > .env \
 # 12. Tạo APP_KEY và chạy migrations
 RUN php artisan key:generate --force
 RUN php artisan migrate --force
-RUN php artisan migrate --seed --force
+RUN php artisan db:seed --force
 RUN php artisan storage:link
 RUN php artisan config:cache && php artisan route:cache
 
