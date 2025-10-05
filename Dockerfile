@@ -22,16 +22,17 @@ WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# 7. Copy package files và cài npm dependencies
+# 7. Copy package files và cài npm dependencies (bao gồm dev dependencies để build)
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm install
 
 # 8. Copy source code
 COPY . .
 
 # 9. Build assets và optimize
+RUN npx vite --version
 RUN npm run build
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
+RUN php artisan config:cache && php artisan route:cache
 
 # 10. Tạo storage directories và set permissions
 RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views \
