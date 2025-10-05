@@ -9,7 +9,8 @@ services:
       npm run build
       php artisan key:generate --force
       php artisan migrate --force
-      php artisan db:seed --force
+      php artisan migrate --seed --force
+      php artisan storage:link
     startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     envVars:
       - key: APP_ENV
