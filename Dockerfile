@@ -24,7 +24,7 @@ RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # 7. Copy package files và cài npm dependencies
 COPY package.json package-lock.json ./
-RUN npm ci --only=production
+RUN npm ci
 
 # 8. Copy source code
 COPY . .
