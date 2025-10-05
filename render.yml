@@ -9,7 +9,8 @@ services:
       npm run build
       php artisan key:generate --force
       php artisan migrate --force
-    startCommand: php artisan serve
+      php artisan db:seed --force
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
     envVars:
       - key: APP_ENV
         value: production
@@ -19,27 +20,23 @@ services:
         value: https://laravel-vite-app.onrender.com
       - key: DB_CONNECTION
         value: mysql
+      # Thông tin database từ Railway
       - key: DB_HOST
-        fromDatabase:
-          name: laravel-vite-db
-          property: host
+        value: switchback.proxy.rlwy.net
       - key: DB_PORT
-        fromDatabase:
-          name: laravel-vite-db
-          property: port
+        value: 54387
       - key: DB_DATABASE
-        fromDatabase:
-          name: laravel-vite-db
-          property: database
+        value: railway
       - key: DB_USERNAME
-        fromDatabase:
-          name: laravel-vite-db
-          property: user
+        value: root
       - key: DB_PASSWORD
-        fromDatabase:
-          name: laravel-vite-db
-          property: password
-
-databases:
-  - name: laravel-vite-db
-    plan: free
+        value: mXIKnFWVTfFwKDETthuwftSnoNhEXxlO
+      # Các biến môi trường khác cần thiết
+      - key: APP_KEY
+        generateValue: true
+      - key: CACHE_DRIVER
+        value: file
+      - key: SESSION_DRIVER
+        value: file
+      - key: QUEUE_CONNECTION
+        value: sync

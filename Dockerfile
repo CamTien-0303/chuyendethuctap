@@ -1,28 +1,44 @@
 # 1. Base image PHP + extensions cần cho Laravel
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# 2. Cài các thư viện hệ thống
+# 2. Cài các thư viện hệ thống và PHP extensions
 RUN apt-get update && apt-get install -y \
-    git unzip libpng-dev libonig-dev libxml2-dev zip curl npm
+    git unzip libpng-dev libonig-dev libxml2-dev zip curl \
+    libzip-dev libfreetype6-dev libjpeg62-turbo-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# 3. Cài composer
+# 3. Cài Node.js và npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+
+# 4. Cài composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# 4. Sao chép toàn bộ code vào container
+# 5. Tạo working directory
 WORKDIR /var/www/html
+
+# 6. Copy composer files trước để tận dụng cache layer
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader --no-scripts
+
+# 7. Copy package files và cài npm dependencies
+COPY package.json package-lock.json ./
+RUN npm ci --only=production
+
+# 8. Copy source code
 COPY . .
 
-# 5. Cài Laravel dependencies
-RUN composer install --no-dev --optimize-autoloader
-RUN npm install && npm run build
-
-# 6. Tạo key và cache
-RUN php artisan key:generate
+# 9. Build assets và optimize
+RUN npm run build
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# 7. Cho phép ghi file
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+# 10. Tạo storage directories và set permissions
+RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views \
+    && chmod -R 775 storage bootstrap/cache
 
-# 8. Mở cổng 8000 và chạy Laravel serve
+# 11. Expose port
 EXPOSE 8000
+
+# 12. Start command
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
