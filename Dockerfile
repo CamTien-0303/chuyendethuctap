@@ -20,7 +20,7 @@ WORKDIR /var/www/html
 
 # 6. Copy composer files trước để tận dụng cache layer
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-scripts
+RUN composer install --optimize-autoloader --no-scripts
 
 # 7. Copy package files và cài npm dependencies (bao gồm dev dependencies để build)
 COPY package.json package-lock.json ./
@@ -56,6 +56,8 @@ RUN echo "APP_NAME=Laravel" > .env \
 # 12. Tạo APP_KEY và chạy migrations
 RUN php artisan key:generate --force
 RUN php artisan migrate --force
+# Đảm bảo Faker được load trước khi seed
+RUN composer dump-autoload
 RUN php artisan db:seed --force
 RUN php artisan storage:link
 RUN php artisan config:cache && php artisan route:cache
