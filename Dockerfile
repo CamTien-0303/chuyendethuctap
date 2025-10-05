@@ -66,4 +66,6 @@ RUN php artisan config:cache && php artisan route:cache
 EXPOSE 8000
 
 # 14. Start command
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+CMD ["/start.sh"]
