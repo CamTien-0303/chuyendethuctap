@@ -14,8 +14,13 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
         // Create admin user (avoid duplicates)
         User::firstOrCreate(
+=======
+        // Create admin user (updateOrCreate để tránh duplicate)
+        User::updateOrCreate(
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
             ['email' => 'admin@example.com'],
             [
                 'name' => 'Admin User',
@@ -25,8 +30,13 @@ class UserSeeder extends Seeder
             ]
         );
 
+<<<<<<< HEAD
         // Create normal user (avoid duplicates)
         User::firstOrCreate(
+=======
+        // Create normal user (updateOrCreate để tránh duplicate)
+        User::updateOrCreate(
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
             ['email' => 'user@example.com'],
             [
                 'name' => 'Normal User',
@@ -36,6 +46,7 @@ class UserSeeder extends Seeder
             ]
         );
 
+<<<<<<< HEAD
         // Create additional users only if we don't have enough
         $existingUsersCount = User::count();
         if ($existingUsersCount < 10) {
@@ -44,3 +55,11 @@ class UserSeeder extends Seeder
         }
     }
 }
+=======
+        // Create additional users (chỉ tạo nếu chưa có đủ)
+        if (User::count() < 10) {
+            User::factory()->count(8)->create();
+        }
+    }
+}
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389

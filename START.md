@@ -24,7 +24,11 @@ A Laravel-based e-commerce application for a flower shop with complete product m
 ### 1. Clone the Repository
 
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/nhandev04/php-flowershop.git
+=======
+git clone https://github.com/CamTien-0303/chuyendethuctap.git
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 cd php-flowershop
 ```
 
@@ -131,16 +135,28 @@ This will start:
 
 Alternatively, you can start services manually:
 
+<<<<<<< HEAD
 #### Start Laravel Server
 ```bash
 php artisan serve
 ```
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 
 #### Start Vite Development Server (in another terminal)
 ```bash
 npm run dev
 ```
 
+<<<<<<< HEAD
+=======
+#### Start Laravel Server
+```bash
+php artisan serve
+```
+
+
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 The application will be available at: `http://localhost:8000`
 
 ## Default Users

@@ -16,7 +16,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'default' => env('DB_CONNECTION', 'mysql'),
+=======
+    'default' => env('DB_CONNECTION', 'sqlite'),
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 
     /*
     |--------------------------------------------------------------------------
@@ -59,8 +63,11 @@ return [
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+<<<<<<< HEAD
                 // Force TCP connection, disable Unix socket
                 PDO::MYSQL_ATTR_INIT_COMMAND => 'SET sql_mode="STRICT_TRANS_TABLES"',
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
             ]) : [],
         ],
 
@@ -149,7 +156,11 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
+<<<<<<< HEAD
             'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')) . '-database-'),
+=======
+            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-database-'),
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 

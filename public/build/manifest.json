@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "resources/css/admin.css": {
     "file": "assets/admin-c65SQ5zk.css",
     "src": "resources/css/admin.css",
@@ -14,6 +15,13 @@
     "src": "resources/css/client-dark-mode.css",
     "isEntry": true
   },
+=======
+  "resources/css/app.css": {
+    "file": "assets/app-tB6I1Puh.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
   "resources/js/app.js": {
     "file": "assets/app-DEF_kFFs.js",
     "name": "app",

@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
+<<<<<<< HEAD
 // Health check endpoint for Railway
 Route::get('/health', function () {
     return response()->json([
@@ -45,6 +46,8 @@ Route::get('/test-home', function () {
 // Test HomeController without middleware
 Route::get('/test-controller', [HomeController::class, 'index']);
 
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 // Client Routes
 Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('client.only');
 

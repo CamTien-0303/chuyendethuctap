@@ -35,16 +35,22 @@ class SettingsServiceProvider extends ServiceProvider
             if (\Schema::hasTable('settings')) {
                 $this->loadSettings();
                 $this->shareSettingsWithViews();
+<<<<<<< HEAD
             } else {
                 // Provide default settings if table doesn't exist
                 $this->shareDefaultSettings();
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
             }
         } catch (\Exception $e) {
             // Log the error but don't crash the application
             \Log::error('Error loading settings: ' . $e->getMessage());
+<<<<<<< HEAD
 
             // Provide default settings as fallback
             $this->shareDefaultSettings();
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
         }
     }
 
@@ -112,6 +118,7 @@ class SettingsServiceProvider extends ServiceProvider
             $view->with('settings', $settings);
         });
     }
+<<<<<<< HEAD
 
     /**
      * Share default settings with all views when database is not available
@@ -136,4 +143,6 @@ class SettingsServiceProvider extends ServiceProvider
             $view->with('settings', $settings);
         });
     }
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 }

@@ -1,6 +1,7 @@
 <?php
 
 return [
+<<<<<<< HEAD
     // Core Laravel Providers (required for Laravel 12)
     Illuminate\Auth\AuthServiceProvider::class,
     Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -26,6 +27,8 @@ return [
     Illuminate\View\ViewServiceProvider::class,
 
     // Application Providers
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
     App\Providers\AppServiceProvider::class,
     App\Providers\SettingsServiceProvider::class,
 ];

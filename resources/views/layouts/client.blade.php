@@ -3,7 +3,11 @@
         darkMode: false,
         initDarkMode() {
             const saved = localStorage.getItem('darkMode');
+<<<<<<< HEAD
             const defaultMode = false; // Default to false
+=======
+            const defaultMode = {{ $settings['dark_mode_default'] ? 'true' : 'false' }};
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
             this.darkMode = saved === 'true' || (saved === null && defaultMode);
             this.applyDarkMode();
         },
@@ -87,6 +91,7 @@
                         title="Chuyển đổi chế độ tối"
                         :aria-label="darkMode ? 'Chuyển sang chế độ sáng' : 'Chuyển sang chế độ tối'">
                         <div class="relative w-6 h-6 flex items-center justify-center">
+<<<<<<< HEAD
                             <i x-show="!darkMode" x-transition:enter="transition-opacity ease-in duration-200"
                                 x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
                                 x-transition:leave="transition-opacity ease-out duration-200"
@@ -97,6 +102,24 @@
                                 x-transition:leave="transition-opacity ease-out duration-200"
                                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                                 class="fas fa-sun text-lg text-yellow-300 absolute"></i>
+=======
+                            <i x-show="!darkMode"
+                               x-transition:enter="transition-opacity ease-in duration-200"
+                               x-transition:enter-start="opacity-0"
+                               x-transition:enter-end="opacity-100"
+                               x-transition:leave="transition-opacity ease-out duration-200"
+                               x-transition:leave-start="opacity-100"
+                               x-transition:leave-end="opacity-0"
+                               class="fas fa-moon text-lg absolute"></i>
+                            <i x-show="darkMode"
+                               x-transition:enter="transition-opacity ease-in duration-200"
+                               x-transition:enter-start="opacity-0"
+                               x-transition:enter-end="opacity-100"
+                               x-transition:leave="transition-opacity ease-out duration-200"
+                               x-transition:leave-start="opacity-100"
+                               x-transition:leave-end="opacity-0"
+                               class="fas fa-sun text-lg text-yellow-300 absolute"></i>
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
                         </div>
                     </button>
 
@@ -178,8 +201,12 @@
                     <a href="{{ route('home') }}" class="block py-2 hover:text-pink-200">Trang chủ</a>
                     <a href="{{ route('products.index') }}" class="block py-2 hover:text-pink-200">Tất cả hoa</a>
                     @foreach(App\Models\Category::where('is_active', true)->take(4)->get() as $category)
+<<<<<<< HEAD
                         <a href="{{ route('products.category', $category) }}"
                             class="block py-2 hover:text-pink-200">{{ $category->name }}</a>
+=======
+                        <a href="{{ route('products.category', $category) }}" class="block py-2 hover:text-pink-200">{{ $category->name }}</a>
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
                     @endforeach
 
                     <!-- Mobile search -->
@@ -256,8 +283,12 @@
             <div
                 class="border-t border-gray-700 dark:border-gray-600 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 dark:text-gray-300">&copy; {{ date('Y') }}
+<<<<<<< HEAD
                     {{ $settings['site_name'] ?? 'Flower Shop' }}. Đã đăng ký bản quyền.
                 </p>
+=======
+                    {{ $settings['site_name'] ?? 'Flower Shop' }}. Đã đăng ký bản quyền.</p>
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 
                 <div class="flex space-x-4 mt-4 md:mt-0">
                     @if($settings['social_media']['facebook'])

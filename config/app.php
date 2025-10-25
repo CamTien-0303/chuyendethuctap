@@ -123,6 +123,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+<<<<<<< HEAD
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -163,4 +164,6 @@ return [
         App\Providers\AppServiceProvider::class,
     ],
 
+=======
+>>>>>>> b8142234838c82bb5657a2d94c196291b8e6f389
 ];
