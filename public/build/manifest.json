@@ -1,0 +1,23 @@
+{
+  "resources/css/admin.css": {
+    "file": "assets/admin-c65SQ5zk.css",
+    "src": "resources/css/admin.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CZJwaFaX.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/client-dark-mode.css": {
+    "file": "assets/client-dark-mode-stRo4D7L.css",
+    "src": "resources/css/client-dark-mode.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DEF_kFFs.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

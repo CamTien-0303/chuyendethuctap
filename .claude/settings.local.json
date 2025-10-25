@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan:*)",
+      "Bash(cat:*)",
+      "Bash(curl -s http://127.0.0.1:8000)",
+      "Bash(cp:*)",
+      "Bash(node:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFIX: Vite manifest và SettingsServiceProvider cho Railway deployment\n\nCác thay đổi:\n1. ✅ Uncomment /public/build trong .gitignore để commit build files\n2. ✅ Enable SettingsServiceProvider trong bootstrap/providers.php\n3. ✅ Thêm client-dark-mode.css vào vite.config.js input\n4. ✅ Tạo copy-manifest.js script để copy manifest từ .vite/ lên root\n5. ✅ Update package.json build script để auto-copy manifest\n6. ✅ Commit public/build/ files cho Railway\n\nFixes:\n- Vite manifest not found error\n- Undefined variable $settings error\n- Railway deployment sẽ có manifest sẵn\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git restore:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFIX: HTTPS/HTTP mixed content - Force HTTPS và trust proxies\n\nFixes cho Railway deployment:\n1. ✅ Force HTTPS scheme trong AppServiceProvider cho production\n2. ✅ Tạo TrustProxies middleware để trust Railway proxies\n3. ✅ Register trust proxies trong bootstrap/app.php\n4. ✅ Support X-Forwarded-* headers từ Railway\n\nFixes:\n- Mixed content error (HTTP assets on HTTPS page)\n- Assets không load được trên Railway\n- Railway proxy detection\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(find:*)",
+      "Bash(git commit:*)",
+      "Bash(git reset:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

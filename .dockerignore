@@ -1,0 +1,46 @@
+# Development files
+.env.local
+.env.development
+*.log
+
+# Version control
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies (we install them in Docker)
+node_modules
+vendor
+
+# Build artifacts
+.phpunit.result.cache
+coverage
+
+# Temporary files
+*.tmp
+*.temp
+
+# Security sensitive files
+.env
+.env.*
+!.env.example
+!.env.production
+*.pem
+*.key
+*.p12
+*.pfx
+auth.json
+secrets.*

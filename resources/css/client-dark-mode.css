@@ -1,0 +1,172 @@
+/* Client Dark Mode Universal Styles */
+
+/* Base elements */
+.dark .bg-gray-100 {
+    @apply bg-gray-800;
+}
+
+.dark .bg-gray-50 {
+    @apply bg-gray-700;
+}
+
+.dark .bg-white {
+    @apply bg-gray-800;
+}
+
+.dark .text-gray-900 {
+    @apply text-white;
+}
+
+.dark .text-gray-800 {
+    @apply text-gray-100;
+}
+
+.dark .text-gray-700 {
+    @apply text-gray-200;
+}
+
+.dark .text-gray-600 {
+    @apply text-gray-300;
+}
+
+.dark .text-gray-500 {
+    @apply text-gray-400;
+}
+
+/* Borders */
+.dark .border-gray-200 {
+    @apply border-gray-700;
+}
+
+.dark .border-gray-300 {
+    @apply border-gray-600;
+}
+
+.dark .divide-gray-200 {
+    @apply divide-gray-700;
+}
+
+/* Forms */
+.dark input,
+.dark select,
+.dark textarea {
+    @apply bg-gray-700 text-white border-gray-600;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+    @apply border-pink-500 ring-pink-500;
+}
+
+/* Cards and containers */
+.dark .shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Links */
+.dark .text-pink-600 {
+    @apply text-pink-400;
+}
+
+.dark .hover\:text-pink-600:hover {
+    @apply text-pink-300;
+}
+
+.dark .hover\:text-pink-900:hover {
+    @apply text-pink-300;
+}
+
+/* Buttons */
+.dark .bg-pink-600 {
+    @apply bg-pink-700;
+}
+
+.dark .hover\:bg-pink-700:hover {
+    @apply bg-pink-800;
+}
+
+/* Status badges */
+.dark .bg-green-100 {
+    @apply bg-green-900/20;
+}
+
+.dark .bg-red-100 {
+    @apply bg-red-900/20;
+}
+
+.dark .bg-yellow-100 {
+    @apply bg-yellow-900/20;
+}
+
+.dark .bg-blue-100 {
+    @apply bg-blue-900/20;
+}
+
+.dark .text-green-800 {
+    @apply text-green-200;
+}
+
+.dark .text-red-800 {
+    @apply text-red-200;
+}
+
+.dark .text-yellow-800 {
+    @apply text-yellow-200;
+}
+
+.dark .text-blue-800 {
+    @apply text-blue-200;
+}
+
+/* Tables */
+.dark thead {
+    @apply bg-gray-700;
+}
+
+.dark tbody {
+    @apply bg-gray-800;
+}
+
+.dark tbody tr:hover {
+    @apply bg-gray-700;
+}
+
+/* Product cards specific styles */
+.dark .product-card {
+    @apply bg-gray-800 border-gray-700;
+}
+
+.dark .product-card:hover {
+    @apply shadow-lg;
+}
+
+/* Icon containers */
+.dark .bg-blue-100 {
+    @apply bg-blue-900/20;
+}
+
+.dark .bg-green-100 {
+    @apply bg-green-900/20;
+}
+
+.dark .bg-purple-100 {
+    @apply bg-purple-900/20;
+}
+
+.dark .text-blue-600 {
+    @apply text-blue-400;
+}
+
+.dark .text-green-600 {
+    @apply text-green-400;
+}
+
+.dark .text-purple-600 {
+    @apply text-purple-400;
+}
+
+/* Transitions */
+* {
+    transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+}
